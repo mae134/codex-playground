@@ -2,16 +2,13 @@
 
 # このドキュメントの役割
 
-このドキュメントは
+このドキュメントは、人間がAIと効率的に開発を進めるための知識ベースである。
 
-「人間がAIと開発するための知識ベース」
-
-である。
+ChatGPTとの議論で採用した運用ルール・開発方針・改善案を蓄積し、今後のプロジェクトでも再利用できることを目的とする。
 
 Codexへ直接渡すことは目的としない。
 
-Codexへ指示する際は、
-このドキュメントを参考にChatGPTがプロンプトを作成する。
+Codexへ指示する際は、このドキュメントを参考にChatGPTがプロンプトを作成する。
 
 ---
 
@@ -241,6 +238,41 @@ AGENTS.mdには
 - GitHub Issue連携
 - PRテンプレート
 - AIレビュー運用
+- Review Checklist
+- Issue Template
+- ADR運用ルール
+- Claude Code運用
+
+# ドキュメント構成
+
+このプロジェクトでは、各ドキュメントの責務を明確に分離する。
+
+各ドキュメントは役割を分離し、それぞれが異なる責務を持つ。
+
+Playbookを起点として、必要に応じて他のドキュメントへ反映・更新する。
+
+docs/
+
+playbook/
+    ai-development-playbook.md
+        ↑
+Human + ChatGPT
+
+adr/
+        ↑
+設計判断
+
+issues/
+        ↑
+タスク管理
+
+prompts/
+        ↑
+プロンプトテンプレート
+
+history/
+        ↑
+履歴管理
 
 ---
 
@@ -371,3 +403,4 @@ Codex運用の知見を蓄積する。
 - チーム体制決定
 - Codex運用開始
 - Playground運用開始
+- AI Development Playbookを運用開始
