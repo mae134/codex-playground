@@ -140,6 +140,10 @@ Push
 
 Merge
 
+※ Playgroundでは簡略化した開発フローを採用する。
+
+GitHub Issue や Pull Request は本番プロジェクト（Trace App）で導入する。
+
 ---
 
 # Git運用
