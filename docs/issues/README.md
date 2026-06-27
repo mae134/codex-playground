@@ -11,3 +11,14 @@ Use this directory to record:
 - Follow-up tasks discovered during work
 
 Keep entries concise, concrete, and tied to the actual work requested.
+
+# Memo App Roadmap
+
+- Project Setup
+- Memo List
+- Add Memo
+- Delete Memo
+- Edit Memo
+- LocalStorage
+- UI Polish
+- Retrospective
