@@ -2,7 +2,7 @@
 
 Implement **{{ISSUE_ID}}**.
 
-Before making any changes, please read:
+Before making any changes, please read the following documents:
 
 - `AGENTS.md`
 - `docs/issues/{{ISSUE_FILE}}`
