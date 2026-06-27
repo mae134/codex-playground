@@ -11,3 +11,10 @@ Use this directory for prompts that help with:
 - Writing or improving documentation
 
 Prompts should be short, explicit about scope, and easy to reuse.
+
+This directory stores reusable prompt templates
+used when interacting with Codex.
+
+Issue files describe WHAT to build.
+
+Prompt templates describe HOW to ask Codex.
