@@ -110,11 +110,12 @@ AIは実装・レビュー・提案を通じて開発を支援する。
 2. Issueを作成する（Issue Creation）
 3. Issueをレビューする（Issue Review）
 4. Issueを承認する（Issue Approval）
-5. Codexが実装する（Implementation）
-6. 実装内容をレビューする（Code Review）
-7. コミットする（Commit）
-8. プッシュする（Push）
-9. マージする（Merge）
+5. ブランチの作成
+6. Codexが実装する（Implementation）
+7. 実装内容をレビューする（Code Review）
+8. コミットする（Commit）
+9. プッシュする（Push）
+10. マージする（Merge）
 
 ※ Playgroundでは簡略化した開発フローを採用する。
 
@@ -226,6 +227,8 @@ AGENTS.mdには
 - Issue Template
 - ADR運用ルール
 - Claude Code運用
+- ブランチの操作ルール
+- 出力先の言語設定
 
 # ドキュメント構成
 
