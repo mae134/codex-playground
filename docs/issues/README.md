@@ -15,16 +15,16 @@ Keep entries concise, concrete, and tied to the actual work requested.
 
 ## Memo App Roadmap
 
-| Status | Issue    | Title         |
-| ------ | -------- | ------------- |
-| ✅      | Issue001 | Project Setup |
-| ⏳      | Issue002 | Memo List     |
-| ⏳      | Issue003 | Add Memo      |
-| ⏳      | Issue004 | Delete Memo   |
-| ⏳      | Issue005 | Edit Memo     |
-| ⏳      | Issue006 | LocalStorage  |
-| ⏳      | Issue007 | UI Polish     |
-| ⏳      | Issue008 | Retrospective |
+| Status | Issue    | Title              |
+| ------ | -------- | ------------------ |
+| ✅     | Issue001 | Project Setup      |
+| ⏳     | Issue002 | Display Memo List  |
+| ⏳     | Issue003 | Add Memo           |
+| ⏳     | Issue004 | Delete Memo        |
+| ⏳     | Issue005 | Edit Memo          |
+| ⏳     | Issue006 | Save Memos to Local Storage |
+| ⏳     | Issue007 | Improve UI         |
+| ⏳     | Issue008 | Retrospective      |
 
 ---
 
