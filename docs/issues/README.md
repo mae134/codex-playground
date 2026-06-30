@@ -18,7 +18,7 @@ Keep entries concise, concrete, and tied to the actual work requested.
 | Status | Issue    | Title              |
 | ------ | -------- | ------------------ |
 | ✅     | Issue001 | Project Setup      |
-| ⏳     | Issue002 | Display Memo List  |
+| ✅     | Issue002 | Display Memo List  |
 | ⏳     | Issue003 | Add Memo           |
 | ⏳     | Issue004 | Delete Memo        |
 | ⏳     | Issue005 | Edit Memo          |
