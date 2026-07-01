@@ -1,6 +1,11 @@
+"use client";
+
+import { useState } from "react";
+
+import { MemoForm } from "./components/MemoForm";
 import { MemoCard, type Memo } from "./components/MemoCard";
 
-const memos: Memo[] = [
+const initialMemos: Memo[] = [
   {
     id: 1,
     title: "Project setup",
@@ -19,12 +24,27 @@ const memos: Memo[] = [
 ];
 
 export default function Home() {
+  const [memos, setMemos] = useState(initialMemos);
+
+  function handleAddMemo(title: string, body: string) {
+    setMemos((currentMemos) => [
+      ...currentMemos,
+      {
+        id: currentMemos.length + 1,
+        title,
+        body,
+      },
+    ]);
+  }
+
   return (
     <main className="memo-page">
       <header className="page-header">
         <h1>Memo List</h1>
         <p>Fixed memo data displayed as cards.</p>
       </header>
+
+      <MemoForm onAddMemo={handleAddMemo} />
 
       <section className="memo-list" aria-label="Memo list">
         {memos.map((memo) => (
