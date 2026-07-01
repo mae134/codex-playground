@@ -19,7 +19,7 @@ Keep entries concise, concrete, and tied to the actual work requested.
 | ------ | -------- | ------------------ |
 | ✅     | Issue001 | Project Setup      |
 | ✅     | Issue002 | Display Memo List  |
-| ⏳     | Issue003 | Add Memo           |
+| 🚧     | Issue003 | Add Memo           |
 | ⏳     | Issue004 | Delete Memo        |
 | ⏳     | Issue005 | Edit Memo          |
 | ⏳     | Issue006 | Save Memos to Local Storage |
