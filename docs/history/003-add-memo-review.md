@@ -24,3 +24,18 @@ Issue003では、React 19 / @types/react 19 環境で `FormEvent` が deprecated
 2. 公式ドキュメントやリリースノートを確認する。
 3. 現在推奨されている実装方法を調査する。
 4. 推奨される方法で実装を修正する。
+
+### Pull Requestテンプレート
+
+Issue003ではCodexがPull Request本文のドラフトを出力した。
+
+今後は、Pull Request作成の品質を安定させるため、以下のテンプレート作成を検討する。
+
+- Pull Requestコメントテンプレート
+- Pull Requestドラフト生成プロンプトテンプレート
+
+目的
+
+- PR本文の形式を統一するため
+- Reviewしやすい情報を毎回含めるため
+- CodexにPRドラフトを安定して出力させるため
