@@ -127,8 +127,8 @@ AIは実装・レビュー・提案を通じて開発を支援する。
 11. Historyを更新する
 12. コミットする
 13. プッシュする
-14. Pull RequestコメントをCodexに作成してもらう
-15. Codexに作成してもらったPull Requestコメントをレビューする
+14. Pull Request本文のドラフトをCodexに作成してもらう
+15. Codexが作成したドラフトをレビューする
 16. Pull Requestを作成する
 17. マージする
 
@@ -172,6 +172,11 @@ Trace AppではGitHub Issueを導入する。
 - Humanが最終承認
 - Scopeは小さく保つ
 - One Issue = One Feature
+
+### 使用するテンプレート
+
+- `issue-prompt-template.md`
+  - ChatGPTでIssueを作成するためのテンプレート
 
 ---
 
@@ -292,20 +297,20 @@ Playbook・Prompt・Templateへ反映する。
 - ブランチの操作ルール
 - 出力先の言語設定
 
-# ドキュメントの責務
+# ドキュメント構成と責務
 
 このプロジェクトでは、各ドキュメントの責務を明確に分離する。
 
 各ドキュメントは役割を分離し、それぞれが異なる責務を持つ。
 
-Playbookを起点として、必要に応じて他のドキュメントへ反映・更新する。
+Historyを起点として改善を行い、改善内容をPlaybook・Promptへ反映する。
 
 ```text
 docs/
 ├── playbook/   … Human + ChatGPT が管理
 ├── adr/        … 設計判断を記録
 ├── issues/     … タスク管理
-├── prompts/    … Codex用プロンプト
+├── prompts/    … ChatGPT・Codex用プロンプト
 └── history/    … 改善履歴
 ```
 
@@ -370,7 +375,7 @@ GitHub Issueへ移行する前にIssueを書く習慣を身につけるため。
 
 ### 目的
 
-Codexへ渡すプロンプトテンプレートを管理する。
+ChatGPT・Codexへ渡すプロンプトテンプレートを管理する。
 
 ### 採用理由
 
