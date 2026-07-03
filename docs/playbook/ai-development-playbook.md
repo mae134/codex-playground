@@ -210,10 +210,18 @@ Humanがプッシュ
 
 # Pull Request運用
 
-- HumanがPull Requestを作成する
-- CodexはPull Request本文のドラフトを作成する
-- HumanがPull Requestをレビューする
-- HumanがMergeする
+1. CodexがPull Request本文のドラフトを作成する
+2. Humanがドラフトをレビューする
+3. HumanがPull Requestを作成する
+4. HumanがMergeする
+
+### 使用するテンプレート
+
+- `codex-implementation-prompt-template.md`
+  - Codexへ実装を依頼するためのテンプレート
+
+- `pull-request-draft-prompt-template.md`
+  - Pull Request本文のドラフトを生成するためのテンプレート
 
 ---
 
