@@ -1,4 +1,4 @@
-# AI Development Playbook v1.0
+# AI Development Playbook v1.1
 
 # このドキュメントの役割
 
@@ -12,7 +12,7 @@ Codexへ指示する際は、このドキュメントを参考にChatGPTがプ�
 
 ---
 
-# Project Roadmap
+# プロジェクトロードマップ（Project Roadmap）
 
 ## Phase 1
 
@@ -43,7 +43,7 @@ Playgroundで確立した開発フローを本番へ適用する。
 
 ---
 
-# Team Structure
+# チーム構成（Team Structure）
 
 ## Human
 
@@ -56,9 +56,11 @@ Playgroundで確立した開発フローを本番へ適用する。
 
 - プロダクトの方向性を決める
 - 要件定義
+- 設計を決定する
 - Issue承認
 - 最終レビュー
-- Git Push / Merge
+- GitへPushする
+- Mergeする
 
 ---
 
@@ -87,11 +89,17 @@ Playgroundで確立した開発フローを本番へ適用する。
 
 ### 責務
 
-- Issue作成（下書き）
-- 実装
-- テスト
-- コミット
-- 実装説明
+- Issueに従って実装する
+- テスト・動作確認を行う
+- Pull Request本文のドラフトを作成する
+- 実装内容を説明する
+
+### 行わないこと
+
+- ブランチを作成・切り替えない
+- コミットしない（明示的な指示がある場合を除く）
+- Pull Requestを作成しない
+- Mergeしない
 
 ---
 
@@ -106,26 +114,72 @@ AIは実装・レビュー・提案を通じて開発を支援する。
 
 # 開発フロー
 
-1. アイデアを考える（Idea）
-2. Issueを作成する（Issue Creation）
-3. Issueをレビューする（Issue Review）
-4. Issueを承認する（Issue Approval）
-5. ブランチの作成
-6. Codexが実装する（Implementation）
-7. 実装内容をレビューする（Code Review）
-8. コミットする（Commit）
-9. プッシュする（Push）
-10. マージする（Merge）
+1. アイデアを考える
+2. Issueを作成する（ChatGPTと相談して作成）
+3. 設計案を作成する（Human + ChatGPT）
+4. 設計レビューを行う
+5. Issueを承認する
+6. ブランチを作成する
+7. 実装する（Codexにやってもらう）
+8. 実装レビューを行う
+9. 必要に応じて差し戻し・再実装する
+10. 最終レビューを行う
+11. Historyを更新する
+12. コミットする
+13. プッシュする
+14. Pull Request本文のドラフトを作成する
+15. ドラフトをレビューする
+16. Pull Requestを作成する
+17. マージする
 
 ※ Playgroundでは簡略化した開発フローを採用する。
 
-GitHub Issue や Pull Request は本番プロジェクト（Trace App）で導入する。
+PlaygroundではMarkdownベースのIssueを利用する。
 
-Issueレビュー
-- 要件・Scope・目的を確認する
+Trace AppではGitHub Issueを導入する。
 
-実装レビュー
-- 実装内容・品質・Issueとの一致を確認する
+### Issueレビュー
+
+以下の内容を確認する。
+
+- 目的（Goal）
+- 実装範囲（Scope）
+- 実装しない範囲（Out of Scope）
+- 完了条件（Acceptance Criteria）
+
+### 実装レビュー
+
+以下の内容を確認する。
+
+- 実装内容
+- 品質
+- Issueとの一致
+
+## ブランチ命名規則
+
+用途に応じて以下のプレフィックスを使用する。
+
+- feature/ : 新機能
+- docs/ : ドキュメント・運用改善
+- fix/ : バグ修正
+- refactor/ : 振る舞いを変えないリファクタリング
+- chore/ : 保守・メンテナンス
+
+---
+
+# Issue運用ルール
+
+- Humanが最終承認
+- Scopeは小さく保つ
+- One Issue = One Feature
+
+### 使用するテンプレート
+
+- `issue-prompt-template.md`
+  - ChatGPTでIssueを作成するためのテンプレート
+
+- `codex-implementation-prompt-template.md`
+  - Codexへ実装を依頼するためのテンプレート
 
 ---
 
@@ -135,6 +189,8 @@ Issueレビュー
 - 1 Issue = 1 Branch
 - 1 Branch = 1 Feature
 - Merge前にレビュー
+- Humanがブランチを作成する
+- HumanがMergeする
 
 ---
 
@@ -148,7 +204,11 @@ Human + ChatGPTがレビュー
 
 ↓
 
-Codex（またはHuman）がコミット
+必要に応じてCodexへ差し戻す
+
+↓
+
+Humanがコミット
 
 ↓
 
@@ -156,11 +216,26 @@ Humanがプッシュ
 
 ---
 
-# Issue運用ルール
+# Pull Request運用
 
-- Humanが最終承認
-- Scopeは小さく保つ
-- One Issue = One Feature
+Pull Request本文のドラフトは、
+変更内容を最も把握している担当者が作成する。
+
+- 実装変更が中心の場合
+  - Codexが作成する
+
+- ドキュメント・運用変更が中心の場合
+  - ChatGPTが作成する
+
+1. 変更内容を最も把握している担当者がPull Request本文のドラフトを作成する
+2. Humanがドラフトをレビューする
+3. HumanがPull Requestを作成する
+4. HumanがMergeする
+
+### 使用するテンプレート
+
+- `pull-request-draft-prompt-template.md`
+  - Pull Request本文のドラフトを生成するためのテンプレート
 
 ---
 
@@ -168,10 +243,10 @@ Humanがプッシュ
 
 毎回できるだけ以下を書く。
 
-- Goal
-- Scope
-- Constraints
-- Output
+- 目的（Goal）
+- 実装範囲（Scope）
+- 制約事項（Constraints）
+- 出力内容（Output）
 
 ---
 
@@ -187,29 +262,31 @@ AGENTS.mdには
 
 ---
 
-# 学び・改善点
+# 設計レビュー（Design Review）
 
-## 2026-06-24
+Human + ChatGPTで作成した設計案を確認する。
 
-### 良かった点
+問題がなければ、Codexへ実装を依頼する。
 
-- CodexはIssue作成が得意
-- コミットメッセージ品質が高い
-- 指示をよく守る
-- 慎重に確認してから変更する
+確認項目
 
-### 改善したい点
+- 目的（Goal）
+- 実装範囲（Scope）
+- 実装しない範囲（Out of Scope）
+- 設計方針（Design Policy）
+- コンポーネント構成（Component Structure）
+- Props設計
+- State管理（State Management）
+- 型定義（Type Definitions）
 
-- 提案が多くなりがち
-- Scopeを広げやすい
-- 情報量が多い
+---
 
-### 改善案
+# History運用
 
-- Scopeを明確に書く
-- 「コード変更禁止」を最初に伝える
-- 出力は3つまでなど上限を指定する
-- 必要最小限の変更を指示する
+改善案はまずHistoryへ記録する。
+
+実際に運用して有効だったもののみ、
+Playbook・Prompt・Templateへ反映する。
 
 ---
 
@@ -218,7 +295,6 @@ AGENTS.mdには
 - docs/issues/
 - docs/prompts/
 - docs/adr/
-- Lessons Learned運用
 - AGENTS.md Version管理
 - GitHub Issue連携
 - PRテンプレート
@@ -230,36 +306,45 @@ AGENTS.mdには
 - ブランチの操作ルール
 - 出力先の言語設定
 
-# ドキュメント構成
+# ドキュメント構成と責務
 
 このプロジェクトでは、各ドキュメントの責務を明確に分離する。
 
 各ドキュメントは役割を分離し、それぞれが異なる責務を持つ。
 
-Playbookを起点として、必要に応じて他のドキュメントへ反映・更新する。
+Historyを起点として改善を行い、改善内容をPlaybook・Promptへ反映する。
 
+```text
 docs/
+├── playbook/   … Human + ChatGPT が管理
+├── adr/        … 設計判断を記録
+├── issues/     … タスク管理
+├── prompts/    … ChatGPT・Codex用プロンプト
+└── history/    … 改善履歴
+```
 
-playbook/
-    ai-development-playbook.md
-        ↑
-Human + ChatGPT
+Historyで学ぶ
 
-adr/
-        ↑
-設計判断
+↓
 
-issues/
-        ↑
-タスク管理
+Playbookへ反映
 
-prompts/
-        ↑
-プロンプトテンプレート
+↓
 
-history/
-        ↑
-履歴管理
+Promptへ反映
+
+↓
+
+Codexへ渡す
+
+---
+
+# 継続的改善（Continuous Improvement）
+
+Historyで改善案を管理する。
+
+改善案は実際のIssueで運用した後に、
+Playbook・Prompt・Templateへ反映する。
 
 ---
 
@@ -299,7 +384,7 @@ GitHub Issueへ移行する前にIssueを書く習慣を身につけるため。
 
 ### 目的
 
-Codexへ渡すプロンプトテンプレートを管理する。
+ChatGPT・Codexへ渡すプロンプトテンプレートを管理する。
 
 ### 採用理由
 
@@ -331,6 +416,7 @@ ADR（Architecture Decision Record：アーキテクチャ設計の意思決定�
 ### 目的
 
 ルール変更履歴を管理する。
+改善案はまずHistoryへ記録する。
 
 ### 採用理由
 
@@ -364,25 +450,17 @@ AI向けドキュメント。
 
 ---
 
-## lessons-learned.md
-
-### 目的
-
-Codex運用の知見を蓄積する。
-
-### 採用理由
-
-同じ失敗を繰り返さず、AI開発のノウハウを蓄積するため。
-
-管理項目
-
-- 良かった点
-- 改善したい点
-- 改善案
-
----
-
 # 更新履歴
+
+## v1.1
+
+- 開発フローを更新
+- チーム体制を整理
+- Pull Request運用を追加
+- 設計レビューを追加
+- History運用を追加
+- 継続的改善の運用を追加
+- ブランチ命名規則を追加
 
 ## v1.0
 
