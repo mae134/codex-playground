@@ -127,8 +127,8 @@ AIは実装・レビュー・提案を通じて開発を支援する。
 11. Historyを更新する
 12. コミットする
 13. プッシュする
-14. Pull Request本文のドラフトをCodexに作成してもらう
-15. Codexが作成したドラフトをレビューする
+14. Pull Request本文のドラフトを作成する
+15. ドラフトをレビューする
 16. Pull Requestを作成する
 17. マージする
 
@@ -178,6 +178,9 @@ Trace AppではGitHub Issueを導入する。
 - `issue-prompt-template.md`
   - ChatGPTでIssueを作成するためのテンプレート
 
+- `codex-implementation-prompt-template.md`
+  - Codexへ実装を依頼するためのテンプレート
+
 ---
 
 # Git運用
@@ -215,15 +218,21 @@ Humanがプッシュ
 
 # Pull Request運用
 
-1. CodexがPull Request本文のドラフトを作成する
+Pull Request本文のドラフトは、
+変更内容を最も把握している担当者が作成する。
+
+- 実装変更が中心の場合
+  - Codexが作成する
+
+- ドキュメント・運用変更が中心の場合
+  - ChatGPTが作成する
+
+1. 変更内容を最も把握している担当者がPull Request本文のドラフトを作成する
 2. Humanがドラフトをレビューする
 3. HumanがPull Requestを作成する
 4. HumanがMergeする
 
 ### 使用するテンプレート
-
-- `codex-implementation-prompt-template.md`
-  - Codexへ実装を依頼するためのテンプレート
 
 - `pull-request-draft-prompt-template.md`
   - Pull Request本文のドラフトを生成するためのテンプレート
