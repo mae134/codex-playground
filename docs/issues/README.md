@@ -1,36 +1,55 @@
 # Issues
 
-This directory stores project issues for AI-assisted development.
+このディレクトリでは、プロジェクトのIssueをMarkdownで管理します。
 
-Use this directory to record:
-
-* Issue goals and scope
-* Requirements and non-goals
-* Decisions made during implementation
-* Follow-up tasks discovered during work
-
-Keep entries concise, concrete, and tied to the actual work requested.
+PlaygroundではGitHub Issueではなく、MarkdownベースのIssueを利用して開発を進めます。
 
 ---
 
-## Memo App Roadmap
+# Purpose
 
-| Status | Issue    | Title              |
-| ------ | -------- | ------------------ |
-| ✅     | Issue001 | Project Setup      |
-| ✅     | Issue002 | Display Memo List  |
-| 🚧     | Issue003 | Add Memo           |
-| ⏳     | Issue004 | Delete Memo        |
-| ⏳     | Issue005 | Edit Memo          |
-| ⏳     | Issue006 | Save Memos to Local Storage |
-| ⏳     | Issue007 | Improve UI         |
-| ⏳     | Issue008 | Retrospective      |
+- Issueを書く習慣を身につける
+- 実装範囲を明確にする
+- ChatGPT・Codexとの認識を揃える
+- Trace AppでGitHub Issueへ移行する準備を行う
 
 ---
 
-## Status
+# Workflow
 
-* ⏳ Planned
-* 🚧 In Progress
-* ✅ Completed
-* ❌ Cancelled
+1. ChatGPTでIssueを作成する
+2. HumanがIssueをレビューする
+3. Issueを承認する
+4. ブランチを作成する
+5. ChatGPT・Humanで設計レビューを行う
+6. Codexへ実装を依頼する
+7. Pull Requestを作成する
+8. Mergeする
+
+---
+
+# Templates
+
+Issue作成には以下のテンプレートを使用します。
+
+- `issue-template.md`
+- `issue-prompt-template.md`
+
+---
+
+# Naming Convention
+
+```text
+001-xxxx.md
+002-xxxx.md
+003-xxxx.md
+```
+
+---
+
+# Status
+
+- ⏳ Planned
+- 🚧 In Progress
+- ✅ Completed
+- ❌ Cancelled
