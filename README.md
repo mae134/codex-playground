@@ -66,3 +66,5 @@ Open <http://localhost:3000>
 5. Commit
 6. Pull Request
 7. Merge
+
+GitHub Flow verification
