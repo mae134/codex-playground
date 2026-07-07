@@ -119,16 +119,78 @@ p {
   line-height: 1.6;
 }
 
+.memo-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.memo-edit-field {
+  display: grid;
+  gap: 0.5rem;
+  color: #3e4c59;
+  font-weight: 700;
+}
+
+.memo-edit-field input,
+.memo-edit-field textarea {
+  width: 100%;
+  padding: 0.75rem;
+  color: #1f2933;
+  font: inherit;
+  font-weight: 400;
+  background: #ffffff;
+  border: 1px solid #bcccdc;
+  border-radius: 6px;
+}
+
+.memo-edit-field textarea {
+  resize: vertical;
+}
+
+.memo-edit-button,
+.memo-save-button,
+.memo-cancel-button,
 .memo-delete-button {
   width: fit-content;
   padding: 0.5rem 0.75rem;
-  color: #ffffff;
   font: inherit;
   font-weight: 700;
-  background: #dc2626;
   border: 0;
   border-radius: 6px;
   cursor: pointer;
+}
+
+.memo-edit-button {
+  color: #ffffff;
+  background: #2563eb;
+}
+
+.memo-edit-button:hover {
+  background: #1d4ed8;
+}
+
+.memo-save-button {
+  color: #ffffff;
+  background: #15803d;
+}
+
+.memo-save-button:hover {
+  background: #166534;
+}
+
+.memo-cancel-button {
+  color: #1f2933;
+  background: #e5e7eb;
+}
+
+.memo-cancel-button:hover {
+  background: #d1d5db;
+}
+
+.memo-delete-button {
+  color: #ffffff;
+  background: #dc2626;
 }
 
 .memo-delete-button:hover {

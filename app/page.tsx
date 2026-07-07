@@ -25,6 +25,9 @@ const initialMemos: Memo[] = [
 
 export default function Home() {
   const [memos, setMemos] = useState(initialMemos);
+  const [editingMemoId, setEditingMemoId] = useState<number | null>(null);
+  const [editingTitle, setEditingTitle] = useState("");
+  const [editingBody, setEditingBody] = useState("");
 
   function handleAddMemo(title: string, body: string) {
     setMemos((currentMemos) => {
@@ -48,6 +51,40 @@ export default function Home() {
     );
   }
 
+  function handleStartEditingMemo(memo: Memo) {
+    setEditingMemoId(memo.id);
+    setEditingTitle(memo.title);
+    setEditingBody(memo.body);
+  }
+
+  function handleCancelEditingMemo() {
+    setEditingMemoId(null);
+    setEditingTitle("");
+    setEditingBody("");
+  }
+
+  function handleSaveEditingMemo() {
+    const nextTitle = editingTitle.trim();
+    const nextBody = editingBody.trim();
+
+    if (!nextTitle || !nextBody || editingMemoId === null) {
+      return;
+    }
+
+    setMemos((currentMemos) =>
+      currentMemos.map((memo) =>
+        memo.id === editingMemoId
+          ? {
+              ...memo,
+              title: nextTitle,
+              body: nextBody,
+            }
+          : memo,
+      ),
+    );
+    handleCancelEditingMemo();
+  }
+
   return (
     <main className="memo-page">
       <header className="page-header">
@@ -59,7 +96,19 @@ export default function Home() {
 
       <section className="memo-list" aria-label="Memo list">
         {memos.map((memo) => (
-          <MemoCard key={memo.id} memo={memo} onDeleteMemo={handleDeleteMemo} />
+          <MemoCard
+            key={memo.id}
+            memo={memo}
+            isEditing={editingMemoId === memo.id}
+            editingTitle={editingTitle}
+            editingBody={editingBody}
+            onEditingTitleChange={setEditingTitle}
+            onEditingBodyChange={setEditingBody}
+            onStartEditingMemo={handleStartEditingMemo}
+            onCancelEditingMemo={handleCancelEditingMemo}
+            onSaveEditingMemo={handleSaveEditingMemo}
+            onDeleteMemo={handleDeleteMemo}
+          />
         ))}
       </section>
     </main>
