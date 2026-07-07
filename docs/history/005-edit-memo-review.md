@@ -90,3 +90,68 @@ Codex用プロンプトのAfter Implementationに以下の要件を追加する�
 - Humanが実装内容を確認しやすくなる
 - レビュー時の認知負荷を下げられる
 - プロンプトは英語、レビュー報告は日本語という役割分担を明確にできる
+
+
+------------------------------------------------------------------------
+
+## 改善点
+
+実装開始前のチェックリストに、実装プロンプトの内容を確認する項目を追加する。
+
+## 理由
+
+実装プロンプトにGitHub Issue本文を埋め込まずにCodexへ渡してしまい、CodexがIssueの内容を確認できない状態になった。
+
+テンプレートのプレースホルダーが残っていても見落とす可能性があるため、実装開始前に確認する仕組みが必要である。
+
+## 対応策
+
+実装開始前のチェックリストへ以下の項目を追加する。
+
+- □ GitHub Issue is embedded in the implementation prompt.
+
+## 期待される効果
+
+- GitHub Issueの貼り忘れを防止できる
+- CodexがIssueを正しく参照できる
+- 実装プロンプトの品質を安定して維持できる
+
+------------------------------------------------------------------------
+
+## 改善点
+
+開発チェックリストを開発フェーズごとに分類する。
+
+## 理由
+
+チェックリストの項目が増えるにつれて、実行するタイミングが分かりにくくなる。
+
+フェーズごとに整理することで、各工程で必要な確認事項を明確にできる。
+
+## 対応策
+
+Playbookのチェックリストを以下のようにフェーズごとへ分類する。
+
+### Before Design
+
+- □ Issue is approved.
+
+### Before Implementation
+
+- □ Branch has been created.
+- □ Local branch is checked out.
+- □ GitHub Issue is embedded in the implementation prompt.
+- □ Approved Design is completed.
+
+### Before Pull Request
+
+- □ Lint passed.
+- □ Build passed.
+- □ Scope verified.
+
+## 期待される効果
+
+- 各フェーズで確認すべき項目を明確にできる
+- 手順漏れを防止できる
+- チェックリストの可読性を向上できる
+- 開発フローを標準化できる
