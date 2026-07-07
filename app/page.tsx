@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { MemoForm } from "./components/MemoForm";
 import { MemoCard, type Memo } from "./components/MemoCard";
@@ -23,11 +23,69 @@ const initialMemos: Memo[] = [
   },
 ];
 
+const memoStorageKey = "codex-playground-memos";
+
+function isMemo(value: unknown): value is Memo {
+  if (typeof value !== "object" || value === null) {
+    return false;
+  }
+
+  const memo = value as Record<string, unknown>;
+
+  return (
+    typeof memo.id === "number" &&
+    typeof memo.title === "string" &&
+    typeof memo.body === "string"
+  );
+}
+
+function loadMemosFromLocalStorage() {
+  if (typeof window === "undefined") {
+    return initialMemos;
+  }
+
+  const savedMemos = localStorage.getItem(memoStorageKey);
+
+  if (savedMemos === null) {
+    return initialMemos;
+  }
+
+  try {
+    const parsedMemos: unknown = JSON.parse(savedMemos);
+
+    if (Array.isArray(parsedMemos) && parsedMemos.every(isMemo)) {
+      return parsedMemos;
+    }
+  } catch {
+    return initialMemos;
+  }
+
+  return initialMemos;
+}
+
 export default function Home() {
   const [memos, setMemos] = useState(initialMemos);
+  const [hasLoadedStoredMemos, setHasLoadedStoredMemos] = useState(false);
   const [editingMemoId, setEditingMemoId] = useState<number | null>(null);
   const [editingTitle, setEditingTitle] = useState("");
   const [editingBody, setEditingBody] = useState("");
+
+  useEffect(() => {
+    const timeoutId = window.setTimeout(() => {
+      setMemos(loadMemosFromLocalStorage());
+      setHasLoadedStoredMemos(true);
+    }, 0);
+
+    return () => window.clearTimeout(timeoutId);
+  }, []);
+
+  useEffect(() => {
+    if (!hasLoadedStoredMemos) {
+      return;
+    }
+
+    localStorage.setItem(memoStorageKey, JSON.stringify(memos));
+  }, [hasLoadedStoredMemos, memos]);
 
   function handleAddMemo(title: string, body: string) {
     setMemos((currentMemos) => {
