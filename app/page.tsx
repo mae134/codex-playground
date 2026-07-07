@@ -27,14 +27,25 @@ export default function Home() {
   const [memos, setMemos] = useState(initialMemos);
 
   function handleAddMemo(title: string, body: string) {
-    setMemos((currentMemos) => [
-      ...currentMemos,
-      {
-        id: currentMemos.length + 1,
-        title,
-        body,
-      },
-    ]);
+    setMemos((currentMemos) => {
+      const nextId =
+        Math.max(0, ...currentMemos.map((memo) => memo.id)) + 1;
+
+      return [
+        ...currentMemos,
+        {
+          id: nextId,
+          title,
+          body,
+        },
+      ];
+    });
+  }
+
+  function handleDeleteMemo(id: number) {
+    setMemos((currentMemos) =>
+      currentMemos.filter((memo) => memo.id !== id),
+    );
   }
 
   return (
@@ -48,7 +59,7 @@ export default function Home() {
 
       <section className="memo-list" aria-label="Memo list">
         {memos.map((memo) => (
-          <MemoCard key={memo.id} memo={memo} />
+          <MemoCard key={memo.id} memo={memo} onDeleteMemo={handleDeleteMemo} />
         ))}
       </section>
     </main>
