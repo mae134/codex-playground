@@ -18,7 +18,7 @@ It should stay concise and be updated when the AI development workflow changes.
 ## Development workflow
 
 - Work from the relevant issue or prompt before making changes.
-- Follow the flow: Idea -> Issue -> Review -> Approve -> Implement -> Review -> Commit -> Push -> Merge.
+- Follow the flow: Idea -> GitHub Issue -> Approved Design -> Implementation -> Review -> Commit -> Push -> Pull Request -> Merge.
 - Treat Human approval as the boundary before implementation when an issue requires approval.
 - Keep scope small: one issue should represent one feature or one focused change.
 - Explain assumptions when requirements are incomplete.
@@ -45,7 +45,7 @@ It should stay concise and be updated when the AI development workflow changes.
 - Do not add secrets or environment-specific values.
 - Keep documentation concise and current.
 - Respect file responsibilities:
-  - `docs/issues/` stores issue notes and task breakdowns.
+  - GitHub Issues are used to manage tasks and requirements.
   - `docs/prompts/` stores reusable prompts for AI-assisted development.
   - `docs/playbook/` stores human-facing AI development guidance.
 

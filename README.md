@@ -21,7 +21,8 @@ Codex Playground は、AI（ChatGPT・Codex）を活用した開発フローを�
 | ドキュメント | 説明 |
 |-------------|------|
 | `docs/playbook/` | 開発ルール・運用方針 |
-| `docs/issues/` | Issue管理 |
+| `docs/checklists/` | 開発フェーズ確認・作業再開用チェックリスト |
+| `docs/adr/` | 設計判断の記録 |
 | `docs/prompts/` | ChatGPT・Codex用プロンプト |
 | `docs/history/` | 改善履歴 |
 
@@ -59,12 +60,10 @@ Open <http://localhost:3000>
 
 # Development Flow
 
-1. Issue
-2. Design Review
+1. GitHub Issue
+2. Approved Design
 3. Implementation
-4. Implementation Review
+4. Review
 5. Commit
 6. Pull Request
 7. Merge
-
-GitHub Flow verification
