@@ -1,3 +1,11 @@
+# GitHub Issue Prompt Template
+
+このテンプレートは、AIが人間向けのGitHub Issue本文を日本語で作成するためのテンプレートです。
+
+## Rules
+
+- 出力は日本語で作成してください。
+
 # {{ISSUE_ID}}
 
 ## Title
