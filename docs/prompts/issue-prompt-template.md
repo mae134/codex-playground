@@ -1,10 +1,10 @@
 # GitHub Issue Prompt Template
 
-このテンプレートは、AIが人間向けのGitHub Issue本文を日本語で作成するためのテンプレートです。
+This template is used to create a GitHub Issue description for human reviewers.
 
 ## Rules
 
-- 出力は日本語で作成してください。
+- Write the GitHub Issue description in Japanese.
 
 # {{ISSUE_ID}}
 
