@@ -1,6 +1,6 @@
 name: Feature / Task
 description: Create a GitHub Issue for a feature or task.
-title: "[Feature] "
+title: "[Task] "
 body:
   - type: markdown
     attributes:
