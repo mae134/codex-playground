@@ -1,6 +1,18 @@
 # Pull Request Draft Generation Prompt
 
-This template is used to create a GitHub Pull Request draft.
+This template is used to instruct the AI coding agent that performed the implementation to generate a GitHub Pull Request draft.
+
+## Workflow
+
+Implementation Completed
+↓
+AI Coding Agent
+↓
+Generate Pull Request Draft
+↓
+Human Review
+↓
+Create Pull Request
 
 ## Rules
 

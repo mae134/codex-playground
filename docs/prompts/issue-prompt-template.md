@@ -1,6 +1,20 @@
 # GitHub Issue Prompt Template
 
-This template is used to create a GitHub Issue description for human reviewers.
+This template is used to instruct an AI assistant to generate a GitHub Issue description for human reviewers.
+
+## Workflow
+
+Human
+↓
+Request GitHub Issue
+↓
+AI Assistant
+↓
+Generate GitHub Issue Description
+↓
+Human Review
+↓
+Create GitHub Issue
 
 ## Rules
 

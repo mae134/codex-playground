@@ -1,6 +1,24 @@
 # Codex Implementation Prompt
 
-This template is used to create implementation instructions for an AI coding agent.
+This template is used by an AI assistant to generate an implementation prompt for an AI coding agent.
+
+## Workflow
+
+Human
+↓
+GitHub Issue + Approved Design
+↓
+AI Assistant
+↓
+Generate Implementation Prompt
+↓
+Human Review
+↓
+AI Coding Agent
+↓
+Implementation
+↓
+Japanese Implementation Report
 
 ## Rules
 
