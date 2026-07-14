@@ -25,6 +25,10 @@ Continue Development
 - Do not invent missing information.
 - Do not duplicate detailed documentation that already exists elsewhere.
 - If required information is unavailable, clearly report it.
+- Keep `.ai/context.md` concise.
+- Keep `.ai/state.json` machine-readable and concise.
+- Store only information that is expected to be consumed programmatically in `.ai/state.json`.
+- Prefer references over duplicating existing documentation.
 
 ---
 
@@ -88,3 +92,14 @@ Provide:
 1. Updated `.ai/context.md`
 2. Updated `.ai/state.json`
 3. A summary describing what changed during the rebuild
+4. Any recommendations for improving the AI context system (if applicable)
+
+## Design Philosophy
+
+The `.ai` directory should provide only the minimum context required for another AI assistant to continue the project.
+
+Summarize project status instead of copying existing documentation.
+
+Prefer references over duplication whenever possible.
+
+It should not become a duplicate of the repository documentation.
