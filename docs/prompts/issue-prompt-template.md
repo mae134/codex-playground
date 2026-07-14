@@ -19,6 +19,11 @@ Create GitHub Issue
 ## Rules
 
 - Write the GitHub Issue description in Japanese.
+- Write the output as a Markdown (`.md`) file.
+
+---
+
+Generate the GitHub Issue using the Markdown template below.
 
 # {{ISSUE_ID}}
 
