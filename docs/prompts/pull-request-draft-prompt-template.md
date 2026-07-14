@@ -17,7 +17,7 @@ Create Pull Request
 ## Rules
 
 - Write the Pull Request draft in English.
-- Write in Markdown.
+- Write the output as a Markdown (`.md`) file.
 - Use the GitHub Issue, implementation summary, and verification results as the source of truth.
 - Follow the approved Issue.
 - Do not include any Out of Scope changes.
@@ -58,7 +58,7 @@ Before generating the draft, review the following:
 
 ---
 
-Generate the Pull Request using the following template.
+Generate the Pull Request using the Markdown template below.
 
 # Title
 
