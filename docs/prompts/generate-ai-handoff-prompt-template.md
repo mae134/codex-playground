@@ -111,3 +111,4 @@ Optimize the document for AI-to-AI project handoff.
 - The file is intended for AI-to-AI communication.
 - The file should not be committed to the repository.
 - Existing `handoff.md` should be overwritten instead of creating additional files.
+- If `.ai/handoff.md` already exists, replace its entire contents instead of appending or merging.
