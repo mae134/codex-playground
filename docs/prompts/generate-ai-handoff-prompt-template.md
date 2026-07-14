@@ -1,14 +1,14 @@
 # AI Handoff Prompt Template
 
-This template is used to instruct an AI assistant to generate a handoff prompt for another AI assistant.
+This template is used to instruct an AI assistant to generate a handoff document for another AI assistant.
 
-The generated handoff prompt should preserve the current project context and enable seamless continuation across conversations and AI tools.
+The generated handoff document should preserve the current project context and enable seamless continuation across conversations and AI tools.
 
 ## Workflow
 
 Update AI Context
 ↓
-Generate AI Handoff Prompt
+Generate AI Handoff Document
 ↓
 (Optional) Human Review
 ↓
@@ -18,7 +18,13 @@ Continue Project
 
 ## Rules
 
-- Write the handoff prompt in English.
+- Write the handoff document in English.
+- Write the output in Markdown.
+- Generate the output as a file.
+- Always generate the file at `.ai/handoff.md`.
+- Always use the fixed file name `handoff.md`.
+- Overwrite the existing `.ai/handoff.md` if it already exists.
+- Do not generate additional handoff files.
 - Optimize the output for AI understanding rather than human readability.
 - Preserve important project context, decisions, assumptions, and unresolved tasks.
 - Do not omit important technical details.
@@ -29,11 +35,11 @@ Continue Project
 
 ---
 
-Generate an AI handoff prompt based on the current project.
+Generate an AI handoff document based on the current project.
 
-The generated prompt should allow another AI assistant to continue the project without requiring additional context.
+The generated document should allow another AI assistant to continue the project without requiring additional context.
 
-Before generating the handoff prompt, review the following:
+Before generating the handoff document, review the following:
 
 - `.ai/context.md`
 - `.ai/state.json`
@@ -47,14 +53,14 @@ Before generating the handoff prompt, review the following:
 
 ## Input
 
-The input may include one or more of the following:
+The input may include one or more of the following.
 
-Required:
+### Required
 
 - `.ai/context.md`
 - `.ai/state.json`
 
-Optional:
+### Optional
 
 - Conversation history
 - GitHub Issue
@@ -67,9 +73,15 @@ Optional:
 
 ---
 
-## Output Requirements
+## Output File
 
-The handoff prompt should include:
+Generate the following file.
+
+```text
+.ai/handoff.md
+```
+
+The generated file should contain:
 
 1. Project purpose
 2. Current goals
@@ -82,26 +94,20 @@ The handoff prompt should include:
 9. Recommended next task
 10. Important references
 
-Examples:
+Reference existing project documents instead of duplicating them whenever possible.
 
-- `.ai/context.md`
-- `.ai/state.json`
-- `AGENTS.md`
-- README
-- Playbook
-- GitHub Issue
-- Approved Design
-- Pull Request
-
-Do not summarize excessively.
-
-Do not optimize for human readability.
-
-Optimize for continuity across AI assistants.
+Optimize the document for AI-to-AI project handoff.
 
 ## Out of Scope
 
 - Update `.ai/context.md`
 - Update `.ai/state.json`
-- Modify repository documents.
-- Change project rules or workflows.
+- Modify repository documents
+- Change project rules or workflows
+
+## Notes
+
+- `handoff.md` is a temporary handoff artifact.
+- The file is intended for AI-to-AI communication.
+- The file should not be committed to the repository.
+- Existing `handoff.md` should be overwritten instead of creating additional files.
