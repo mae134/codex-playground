@@ -1,4 +1,4 @@
-# AGENTS.md v1.1
+# AGENTS.md v1.2
 
 This file defines the rules Codex must follow when working in this repository.
 It should stay concise and be updated when the AI development workflow changes.
@@ -48,6 +48,76 @@ It should stay concise and be updated when the AI development workflow changes.
   - GitHub Issues are used to manage tasks and requirements.
   - `docs/prompts/` stores reusable prompts for AI-assisted development.
   - `docs/playbook/` stores human-facing AI development guidance.
+
+## Command execution policy
+
+The AI coding agent should proactively execute commands required to inspect the repository and verify its work when permitted by the execution environment.
+
+### Read-only commands
+
+Read-only commands may be executed without requesting Human approval.
+
+Examples include:
+
+- `git status`
+- `git diff`
+- `git log`
+- `git show`
+- `git branch --show-current`
+- `git remote -v`
+- `gh issue list`
+- `gh issue view`
+- `gh pr list`
+- `gh pr view`
+- `gh repo view`
+- `ls`
+- `find`
+- `tree`
+- `cat`
+- `grep`
+- `head`
+- `tail`
+- `pwd`
+
+### Verification commands
+
+Only execute verification commands that are relevant to the current task, supported by the project, and do not modify project state.
+
+Examples include:
+
+- `npm run lint`
+- `npm test`
+- `npm run test`
+- `npm run build`
+- `npm run typecheck`
+- `curl` (GET / HEAD requests)
+
+Only execute commands that are relevant to the current task and supported by the project.
+
+### Commands requiring Human approval
+
+Request explicit Human approval before executing commands that modify repository history, remote resources, project state, or user data.
+
+Examples include:
+
+- `git commit`
+- `git push`
+- `git reset`
+- `git rebase`
+- `git clean`
+- `git branch -D`
+- `gh issue create`
+- `gh issue edit`
+- `gh issue close`
+- `gh pr create`
+- `gh pr edit`
+- `gh pr merge`
+- State-changing HTTP requests (`POST`, `PUT`, `PATCH`, `DELETE`)
+- `rm` or other destructive file operations
+
+Do not bypass approval requirements imposed by the execution environment.
+
+If the purpose or impact of a command is unclear, explain it and request Human approval before execution.
 
 ## Testing expectations
 
