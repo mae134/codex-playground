@@ -100,4 +100,6 @@ Please report:
 
 Run relevant tests or verification steps when applicable.
 
+Proactively execute relevant read-only and verification commands according to the Command Execution Policy defined in `AGENTS.md`.
+
 Do not commit unless explicitly requested.
