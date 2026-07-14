@@ -26,3 +26,6 @@ pnpm-debug.log*
 
 # typescript
 *.tsbuildinfo
+
+# AI handoff
+.ai/handoff.md
