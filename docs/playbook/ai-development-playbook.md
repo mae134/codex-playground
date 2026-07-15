@@ -132,6 +132,10 @@ Codex
 ↓
 Review
 ↓
+Repository Documentation Review（if needed）
+↓
+AI Context Update（if needed）
+↓
 History（if needed）
 ↓
 Commit
@@ -156,13 +160,15 @@ Merge
 10. 実装レビューを行う
 11. 必要に応じて差し戻し・再実装する
 12. 最終レビューを行う
-13. Historyを更新する（必要に応じて）
-14. コミットする
-15. プッシュする
-16. Pull Request本文のドラフトを作成する
-17. ドラフトをレビューする
-18. Pull Requestを作成する
-19. マージする
+13. Repository Documentation更新要否を確認する（必要に応じて）
+14. AI Contextを更新する（必要に応じて）
+15. Historyを更新する（必要に応じて）
+16. コミットする
+17. プッシュする
+18. Pull Request本文のドラフトを作成する
+19. ドラフトをレビューする
+20. Pull Requestを作成する
+21. マージする
 
 ※ Playgroundでは、本番導入前の開発フローを検証する。
 
@@ -220,6 +226,21 @@ GitHub Issueは「何を実装するか（What）」を定義する。
 
 - `codex-implementation-prompt-template.md`
   - Codexへ実装を依頼するためのテンプレート
+
+- `pull-request-draft-prompt-template.md`
+  - Pull Request本文のドラフトを生成するためのテンプレート
+
+- `generate-ai-handoff-prompt-template.md`
+  - AI間の引き継ぎプロンプトを生成するためのテンプレート
+
+- `update-ai-context-incremental-prompt-template.md`
+  - Issue完了後に `.ai/` のコンテキストを差分更新するためのテンプレート
+
+- `rebuild-ai-context-prompt-template.md`
+  - 現在のリポジトリ状態から `.ai/` のコンテキストを再構築するためのテンプレート
+
+- `repository-documentation-update-prompt-template.md`
+  - 実装完了後にリポジトリ文書の更新要否を確認するためのテンプレート
 
 ---
 
@@ -315,6 +336,28 @@ GitHub Issue・Approved Design・プロンプトテンプレートを基にChatG
 テンプレートを更新する場合は、Historyで運用を十分に検証した後に反映する。
 
 Codexへ渡す実装プロンプト本文は英語で記述する。
+
+---
+
+# AI Context運用
+
+AI Contextは `.ai/` で管理し、AIがリポジトリの現在状態を把握するために使用する。
+
+Issue完了後の差分更新には `update-ai-context-incremental-prompt-template.md` を使用する。
+
+リポジトリ状態から再構築する場合は `rebuild-ai-context-prompt-template.md` を使用する。
+
+Repository Documentation更新プロンプトでは `.ai/context.md` と `.ai/state.json` を更新しない。
+
+---
+
+# Repository Documentation運用
+
+実装完了後は、必要に応じて `repository-documentation-update-prompt-template.md` を使用し、リポジトリ文書の更新要否を確認する。
+
+更新対象は、実装内容によって直接影響を受けた文書に限定する。
+
+プロジェクトルール・アーキテクチャ判断・コアワークフローは、GitHub IssueまたはApproved Designで明示的に要求された場合のみ更新する。
 
 ---
 
@@ -534,6 +577,9 @@ AI向けドキュメント。
 - コミット運用を更新
 - Pull Request運用を更新
 - プロンプト作成ルールを更新
+- プロンプトテンプレート一覧を更新
+- AI Context運用を追加
+- Repository Documentation運用を追加
 - History運用を更新
 - ドキュメント構成と責務を更新
 - 開発チェックリスト運用を追加
