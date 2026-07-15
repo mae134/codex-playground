@@ -24,7 +24,7 @@ Human Review
 - Use the GitHub Issue, Approved Design, completed implementation, and repository state as the source of truth.
 - Review the relevant repository documentation before making changes.
 - First determine whether each document requires an update.
-- Update only documents directly affected by the completed implementation.
+- Update only documents that are directly affected by the completed implementation or its impact on the repository workflow.
 - Do not modify unaffected documentation.
 - Do not add speculative documentation.
 - Do not duplicate information that already exists in another authoritative document.
@@ -77,6 +77,34 @@ Review applicable documentation, including:
 
 Do not update `.ai/context.md` or `.ai/state.json` with this prompt. Use the dedicated AI Context update prompts instead.
 
+### README Review Checklist
+
+Review whether the following sections are still accurate:
+
+- Project Goals
+- Documents
+- Development Setup
+- Available Scripts
+- Development Flow
+- AI workflow overview
+- Repository structure
+
+If any reviewed section is outdated or inconsistent with the current repository, update the document accordingly.
+
+### Playbook Review Checklist
+
+Review whether the following sections reflect the current workflow:
+
+- Development Flow
+- Team Roles
+- Prompt Workflow
+- Git Workflow
+- AI Context Workflow
+- Repository Documentation Workflow
+- Prompt Template List
+
+If any reviewed section is outdated or inconsistent with the current repository, update the document accordingly.
+
 ---
 
 ## Decision Criteria
@@ -99,7 +127,11 @@ A document does not require an update merely because it exists or is related to 
 
 ## Documentation Review
 
-Before modifying any documentation, report which documents require updates and why.
+Before modifying any documentation:
+
+- determine the update decision for each reviewed document;
+- report the reason for each decision; and
+- update every document whose decision is **Updated**.
 
 Wait for Human approval only if explicitly instructed.
 
@@ -123,10 +155,32 @@ Provide:
 
 1. Updated documentation files (if any)
 2. A documentation review summary
-3. A list of documents that were updated and the reason for each update
-4. A list of reviewed documents that did not require changes and the reason
-5. Recommendations for out-of-scope documentation improvements (maximum 3)
-6. If no documentation was updated, explicitly report that no documentation changes were required.
+3. A documentation review report in the following format:
+
+Use one of the following values for `Decision`:
+
+- Updated
+- No update required
+- Recommendation only
+
+Report each reviewed document using the following format:
+
+```text
+Document: README.md
+Decision: Updated
+Reason: ...
+
+Document: AGENTS.md
+Decision: No update required
+Reason: ...
+
+Document: docs/history/
+Decision: Recommendation only
+Reason: ...
+```
+
+4. Recommendations for out-of-scope documentation improvements (maximum 3)
+5. If no documentation was updated, explicitly report that no documentation changes were required.
 
 ## Out of Scope
 

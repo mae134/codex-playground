@@ -69,3 +69,11 @@ Update them when:
 - docs/prompts/
 - docs/checklists/
 - docs/history/
+
+---
+
+# Documentation Guidelines
+
+- Keep this `README.md` entirely in English.
+- Write all new and modified README content in English.
+- Keep the README concise and focused on the purpose of its directory.

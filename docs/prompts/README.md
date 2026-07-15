@@ -1,66 +1,78 @@
 # Prompts
 
-このディレクトリでは、ChatGPT・Codexへ渡すプロンプトテンプレートを管理します。
+This directory contains prompt templates used for ChatGPT, Codex, and other AI assistants.
 
-プロンプトテンプレートを利用することで、AIへの指示内容を標準化し、品質を一定に保つことを目的とします。
+These templates standardize AI instructions, improve consistency, and help maintain a high-quality AI-assisted development workflow.
 
 ---
 
 # Purpose
 
-- AIへの指示内容を標準化する
-- 毎回ゼロからプロンプトを作成しない
-- 開発フローを統一する
-- プロンプト品質を継続的に改善する
+- Standardize instructions provided to AI assistants
+- Avoid creating prompts from scratch for every task
+- Maintain a consistent development workflow
+- Continuously improve prompt quality
 
 ---
 
 # Templates
 
-## issue-prompt-template.md
+## `issue-prompt-template.md`
 
-ChatGPTでIssueを作成するためのテンプレート
+Generates GitHub Issue descriptions for human review.
 
-## codex-implementation-prompt-template.md
+## `codex-implementation-prompt-template.md`
 
-Codexへ実装を依頼するためのテンプレート
+Generates implementation prompts for Codex.
 
-## pull-request-draft-prompt-template.md
+## `pull-request-draft-prompt-template.md`
 
-Pull Request本文のドラフトを生成するためのテンプレート
+Generates Pull Request draft descriptions.
 
-## generate-ai-handoff-prompt-template.md
+## `generate-ai-handoff-prompt-template.md`
 
-AI間の引き継ぎプロンプトを生成するためのテンプレート
+Generates AI handoff documents for transferring project context between AI assistants.
 
-## update-ai-context-incremental-prompt-template.md
+## `update-ai-context-incremental-prompt-template.md`
 
-Issue完了後に `.ai/` のコンテキストを差分更新するためのテンプレート
+Incrementally updates the `.ai/` project context after completing a GitHub Issue.
 
-## rebuild-ai-context-prompt-template.md
+## `rebuild-ai-context-prompt-template.md`
 
-現在のリポジトリ状態から `.ai/` のコンテキストを再構築するためのテンプレート
+Rebuilds the `.ai/` project context from the current repository state.
 
-## repository-documentation-update-prompt-template.md
+## `repository-documentation-update-prompt-template.md`
 
-実装完了後にリポジトリ文書の更新要否を確認するためのテンプレート
+Reviews repository documentation after implementation and updates affected documents when necessary.
 
 ---
 
 # Workflow
 
-Issue作成
+GitHub Issue
 ↓
-Codexへ実装依頼
+Implementation Prompt
 ↓
-Pull Request本文のドラフト作成
+Implementation
 ↓
-必要に応じてAI Context・関連文書を更新
+Repository Documentation Review
+↓
+AI Context Update (if needed)
+↓
+Pull Request Draft
 
 ---
 
 # Rules
 
-- Promptはできるだけ再利用できる形で作成する
-- Promptの改善案は、まずHistoryへ記録する
-- 有効性を確認した後、テンプレートへ反映する
+- Design prompts to be reusable whenever possible.
+- Record prompt improvement ideas in `docs/history/` before adopting them.
+- Update prompt templates only after the improvements have been validated.
+
+---
+
+# Documentation Guidelines
+
+- Keep this `README.md` entirely in English.
+- Write all new and modified README content in English.
+- Keep the README concise and focused on the purpose of its directory.
