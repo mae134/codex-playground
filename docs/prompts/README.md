@@ -29,6 +29,22 @@ Codexへ実装を依頼するためのテンプレート
 
 Pull Request本文のドラフトを生成するためのテンプレート
 
+## generate-ai-handoff-prompt-template.md
+
+AI間の引き継ぎプロンプトを生成するためのテンプレート
+
+## update-ai-context-incremental-prompt-template.md
+
+Issue完了後に `.ai/` のコンテキストを差分更新するためのテンプレート
+
+## rebuild-ai-context-prompt-template.md
+
+現在のリポジトリ状態から `.ai/` のコンテキストを再構築するためのテンプレート
+
+## repository-documentation-update-prompt-template.md
+
+実装完了後にリポジトリ文書の更新要否を確認するためのテンプレート
+
 ---
 
 # Workflow
@@ -38,6 +54,8 @@ Issue作成
 Codexへ実装依頼
 ↓
 Pull Request本文のドラフト作成
+↓
+必要に応じてAI Context・関連文書を更新
 
 ---
 
