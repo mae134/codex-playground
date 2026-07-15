@@ -31,6 +31,8 @@ Human Review
 - Preserve the existing language, structure, tone, and responsibility of each document.
 - Keep documentation concise, accurate, and current.
 - If required information is unavailable, clearly report it instead of guessing.
+- If no documentation requires updates, do not modify any files.
+- If the implementation does not correspond to the current GitHub Issue, report the mismatch before updating any documentation.
 
 ## Protected Documentation
 
@@ -95,6 +97,14 @@ A document does not require an update merely because it exists or is related to 
 
 ---
 
+## Documentation Review
+
+Before modifying any documentation, report which documents require updates and why.
+
+Wait for Human approval only if explicitly instructed.
+
+---
+
 ## Tasks
 
 1. Review the completed implementation and its impact on repository documentation.
@@ -103,6 +113,7 @@ A document does not require an update merely because it exists or is related to 
 4. Preserve all unaffected content.
 5. Report the reason for each update decision.
 6. Report relevant documentation improvements that were identified but not implemented because they were outside the approved scope.
+7. If no documentation requires updates, report that no documentation changes were necessary.
 
 ---
 
@@ -110,11 +121,12 @@ A document does not require an update merely because it exists or is related to 
 
 Provide:
 
-1. Updated documentation files
+1. Updated documentation files (if any)
 2. A documentation review summary
 3. A list of documents that were updated and the reason for each update
 4. A list of reviewed documents that did not require changes and the reason
 5. Recommendations for out-of-scope documentation improvements (maximum 3)
+6. If no documentation was updated, explicitly report that no documentation changes were required.
 
 ## Out of Scope
 
@@ -124,3 +136,5 @@ Provide:
 - Modify application code
 - Change project rules, architecture decisions, or core workflow policies unless explicitly required
 - Update unrelated documentation
+
+Prefer reporting "No update required" instead of making unnecessary documentation changes.
