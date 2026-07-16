@@ -41,9 +41,17 @@ Incrementally updates the `.ai/` project context after completing a GitHub Issue
 
 Rebuilds the `.ai/` project context from the current repository state.
 
+## `generate-git-metadata-prompt-template.md`
+
+Generates Git metadata summaries for AI-assisted workflow handoffs and reviews.
+
 ## `repository-documentation-update-prompt-template.md`
 
 Reviews repository documentation after implementation and updates affected documents when necessary.
+
+## `repository-review-prompt-template.md`
+
+Reviews the current repository state without modifying files.
 
 ---
 

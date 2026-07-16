@@ -103,6 +103,8 @@ Review whether the following sections reflect the current workflow:
 - Repository Documentation Workflow
 - Prompt Template List
 
+When reviewing documentation inventories or template indexes, ensure that every prompt template currently present in the repository is listed exactly once.
+
 If any reviewed section is outdated or inconsistent with the current repository, update the document accordingly.
 
 ---

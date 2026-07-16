@@ -239,8 +239,14 @@ GitHub Issueは「何を実装するか（What）」を定義する。
 - `rebuild-ai-context-prompt-template.md`
   - 現在のリポジトリ状態から `.ai/` のコンテキストを再構築するためのテンプレート
 
+- `generate-git-metadata-prompt-template.md`
+  - Gitメタデータの要約を生成するためのテンプレート
+
 - `repository-documentation-update-prompt-template.md`
   - 実装完了後にリポジトリ文書の更新要否を確認するためのテンプレート
+
+- `repository-review-prompt-template.md`
+  - 現在のリポジトリ状態を横断的にレビューするためのテンプレート
 
 ---
 
