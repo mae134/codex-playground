@@ -25,6 +25,10 @@ Generates GitHub Issue descriptions for human review.
 
 Generates implementation prompts for Codex.
 
+## `approved-design-prompt-template.md`
+
+Generates Approved Design documents before implementation begins.
+
 ## `pull-request-draft-prompt-template.md`
 
 Generates Pull Request draft descriptions.

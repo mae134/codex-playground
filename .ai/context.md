@@ -2,170 +2,64 @@
 
 ## Project
 
-Codex Playground is a learning project for establishing and validating an AI-assisted development workflow before applying the workflow to Trace App.
-
-The repository currently contains:
-
-- A Next.js memo app used as the implementation practice target.
-- Workflow documentation for Issue-driven development, Approved Design, implementation prompts, review, Pull Request drafting, and merge flow.
-- Shared AI project context files under `.ai/`.
+Codex Playground is a Next.js memo app and a learning repository for establishing an AI-assisted, Issue-driven development workflow before applying it to Trace App.
 
 ## Current Goal
 
-Establish a repeatable AI-assisted development workflow that can be reused across conversations, AI tools, and future projects.
-
-The current workflow improvement focus is AI context management:
-
-- Keep `.ai/context.md` and `.ai/state.json` synchronized with the repository.
-- Use prompt templates to update or rebuild AI context consistently.
-- Avoid duplicating detailed documentation that already exists elsewhere.
+Complete the Phase 1 retrospective and keep the workflow usable through small, evidence-based improvements, then apply the validated approach to Trace App.
 
 ## Current Status
 
-The memo app has implemented the core practice features:
-
-- Display fixed memo list.
-- Add memo.
-- Delete memo.
-- Edit memo.
-- Save memos to Local Storage.
-
-The workflow foundation has also been expanded:
-
-- `AGENTS.md` defines AI coding agent rules.
-- `README.md` describes the project and setup.
-- `docs/playbook/` documents the human-facing AI development workflow.
-- `docs/prompts/` contains reusable AI prompt templates.
-- `docs/checklists/` contains implementation, Pull Request, and work-resume checklists.
-- `docs/history/` records workflow review findings.
-- `.github/ISSUE_TEMPLATE/` contains GitHub Issue Forms.
-- `.github/PULL_REQUEST_TEMPLATE.md` standardizes Pull Request descriptions.
-- `.github/workflows/ci.yml` runs lint and build on push to `main` and Pull Requests.
-- `.ai/` exists as a shared project context directory.
-
-GitHub state checked during this rebuild:
-
-- Current branch: `feature/create-ai-context-update-prompts`.
-- Current open Issue for this branch: GitHub Issue #47, "Create AI Context Update Prompt Templates".
-- No Pull Request exists for the current branch.
-- Open Issues visible from GitHub: #47, #37, #35, #32, #17, #16, #5.
+- The memo app's core features and UI improvement are complete, including Local Storage persistence.
+- The repository now includes agent rules, an AI development playbook, reusable prompts, checklists, Approved Designs, review history, Issue/PR templates, CI, and shared AI context.
+- The Phase 1 retrospective and related documentation updates are committed on `docs/project-retrospective` and await the remaining GitHub workflow steps.
+- The worktree was clean before this context rebuild. No Pull Request exists for the current branch.
 
 ## Current Task
 
-Rebuild `.ai/context.md` and `.ai/state.json` from the current repository state.
-
-Related active branch work:
-
-- Issue #47 adds AI context update prompt templates.
-- `docs/prompts/update-ai-context-incremental-prompt-template.md` exists.
-- `docs/prompts/rebuild-ai-context-prompt-template.md` exists and currently has an uncommitted update adding recommendations to the expected output.
+Rebuild `.ai/context.md` and `.ai/state.json` for open Issue #70, **Rebuild AI Context**, using the repository as the source of truth.
 
 ## Completed Work
 
-Application work completed and merged:
-
-- Display memo list.
-- Add memo form.
-- Delete memo.
-- Edit memo.
-- Save memos to Local Storage.
-
-Workflow and documentation work completed and merged:
-
-- AI development workflow documentation.
-- GitHub workflow practice.
-- GitHub Issue Forms.
-- Pull Request template.
-- Development checklists.
-- GitHub Actions CI for lint and build.
-- `.ai/` project context system.
-- AI handoff and AI context management prompt templates.
-
-Recent merged Pull Requests visible from GitHub include:
-
-- PR #46: Add AI project context system.
-- PR #45: Add initial GitHub Actions workflow.
-- PR #44: Add development checklists.
-- PR #43: Add Pull Request template.
-- PR #27: Save memos to Local Storage.
-- PR #26: Edit memo.
-- PR #25: Delete memo.
+- Implemented display, add, delete, edit, persistence, and UI improvements for the memo app.
+- Established the Issue -> Approved Design -> Implementation -> review -> PR workflow and supporting repository documentation.
+- Added the Phase 1 retrospective at `docs/retrospectives/2026-codex-playground-phase1.md` in commit `bcce04d`.
 
 ## Pending Tasks
 
-Known open GitHub Issues:
-
-- #47: Create AI Context Update Prompt Templates.
-- #37: Document AI Development Environment Setup.
-- #35: Document GitHub Issue Branch Workflow.
-- #32: Update README for GitHub Issue workflow.
-- #17: Retrospective.
-- #16: Improve UI.
-- #5: GitHub Issues / Projects introduction.
-
-Current local pending work:
-
-- Review and decide whether to keep the uncommitted change in `docs/prompts/rebuild-ai-context-prompt-template.md`.
-- Review the rebuilt `.ai/context.md` and `.ai/state.json`.
-- Commit only when explicitly requested by the Human.
+- Review this rebuilt AI context and complete Issue #70.
+- Complete the review, Pull Request, and merge steps for the retrospective work associated with Issue #17.
+- Continue evaluating Issue #5, **GitHub Issues・Projects導入**; its required next action is not documented in the local repository.
 
 ## Important Decisions
 
-- Human owns direction, final decisions, push, and merge.
-- ChatGPT acts as Architect and Mentor.
-- Codex acts as Developer.
-- GitHub Issue defines what to implement.
-- Approved Design defines how to implement it.
-- Codex should follow Approved Design and should not change design decisions.
-- Codex must explain implementation approach, planned files, and assumptions before editing when prompted.
-- Codex must not create or switch branches unless explicitly requested.
-- Codex must not commit, push, merge, or create Pull Requests unless explicitly requested.
-- Pull Request drafts should be generated by AI, but Pull Requests are created by the Human.
-- Implementation prompts are written in English.
-- Final implementation reports are written in Japanese when requested for human review.
-- `.ai/` is an AI-tool-independent shared context directory.
-- `.ai/` is updated manually or by explicit AI instruction.
-- Keep `.ai/` concise and point to source documents instead of duplicating them.
+- The Human owns direction, approval, final review, push, and merge; Codex commits only when explicitly requested.
+- GitHub Issues define what to implement; Approved Designs define how to implement it.
+- Keep AI context minimal and reference repository documentation instead of duplicating it.
+- Record improvement ideas in History and validate them before changing the Playbook, prompts, or checklists.
 
 ## Constraints
 
-- Keep `main` stable.
-- Use one branch per issue and one feature per branch.
-- Preserve existing user changes.
-- Do not modify unrelated files.
-- Do not implement Out of Scope work.
-- Do not add speculative architecture.
-- Run relevant verification when changes can be checked locally.
-- For documentation-only changes, review the changed documents for clarity, scope, and consistency.
-- For `.ai/` updates, use the current repository as the source of truth.
-- If required information is unavailable, state that clearly instead of guessing.
+- Follow `AGENTS.md`; keep `main` stable and preserve unrelated user changes.
+- Do not add application code, tooling, CI, or automation without an approved Issue.
+- Do not push or merge, and do not commit unless explicitly requested.
+- Do not invent unavailable project or GitHub state.
 
 ## Next Recommended Task
 
-Review the current uncommitted changes:
-
-1. Confirm the rebuilt `.ai/context.md` and `.ai/state.json`.
-2. Confirm the pending `docs/prompts/rebuild-ai-context-prompt-template.md` change for Issue #47.
-3. Run documentation review or relevant checks as needed.
-4. Commit only after explicit Human approval.
+Review the rebuilt `.ai` files, then complete the Human-owned review and Git workflow for Issue #70 and the retrospective branch.
 
 ## Important References
 
-- `AGENTS.md`: AI coding agent rules.
-- `README.md`: project purpose, setup, scripts, and development flow.
-- `.ai/README.md`: purpose and update rules for `.ai/`.
-- `.ai/context.md`: human-readable AI project context.
-- `.ai/state.json`: machine-readable AI project state.
-- `docs/playbook/ai-development-playbook.md`: human-facing AI development workflow.
-- `docs/prompts/`: reusable AI prompt templates.
-- `docs/checklists/`: implementation, Pull Request, and work-resume checklists.
-- `docs/history/`: workflow review findings and improvement history.
-- `.github/ISSUE_TEMPLATE/`: GitHub Issue Forms.
-- `.github/PULL_REQUEST_TEMPLATE.md`: Pull Request template.
-- `.github/workflows/ci.yml`: CI workflow.
+- `AGENTS.md`: agent-facing repository rules.
+- `README.md`: project overview, structure, setup, and development flow.
+- `.ai/README.md`: AI context purpose and update rules.
+- `docs/playbook/ai-development-playbook.md`: human-facing workflow guidance.
+- `docs/retrospectives/2026-codex-playground-phase1.md`: current Phase 1 retrospective.
+- `docs/design/approved/17-project-retrospective.md`: approved retrospective design.
+- `docs/prompts/`, `docs/checklists/`, and `docs/history/`: reusable workflow material and recorded findings.
 
-## Unavailable or Limited Information
+## Unavailable Information
 
-- GitHub Issues and Pull Requests were available through `gh` during this rebuild.
-- Detailed current Project board state was not reviewed.
-- No current Pull Request exists for `feature/create-ai-context-update-prompts`.
+- GitHub Issue and Pull Request lists were available, but detailed Issue bodies were unavailable during this rebuild because GitHub API access failed.
+- GitHub Project board state was not reviewed.
