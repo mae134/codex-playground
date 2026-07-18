@@ -38,7 +38,7 @@ export function MemoForm({ onAddMemo }: MemoFormProps) {
         />
       </label>
 
-      <button type="submit">追加</button>
+      <button type="submit">Add memo</button>
     </form>
   );
 }
