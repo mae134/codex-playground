@@ -31,6 +31,7 @@ AI Coding Agent
 - Keep the design concise, practical, and implementation-oriented.
 - Clearly distinguish confirmed decisions from assumptions.
 - If required information is unavailable, report it instead of guessing.
+- Treat Additional Context as supplementary guidance. If it conflicts with the GitHub Issue, follow the GitHub Issue.
 
 ---
 
@@ -52,6 +53,15 @@ Before generating the design, review:
 {{GITHUB_ISSUE}}
 
 ### Additional Context (Optional)
+
+Provide any additional implementation preferences, design direction, project constraints, or other guidance that is not captured by the GitHub Issue.
+
+Examples:
+
+- Preferred UI style (e.g. Notion-inspired, Apple-inspired)
+- Performance considerations
+- Temporary project constraints
+- Human design decisions
 
 {{ADDITIONAL_CONTEXT}}
 
