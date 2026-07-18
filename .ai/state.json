@@ -2,115 +2,40 @@
   "schema_version": 1,
   "project": {
     "name": "codex-playground",
-    "purpose": "Learning project for establishing an AI-assisted development workflow before applying it to Trace App.",
+    "phase": 1,
     "application": "Next.js memo app"
   },
   "current": {
-    "branch": "feature/create-ai-context-update-prompts",
+    "branch": "docs/project-retrospective",
     "issue": {
-      "number": 47,
-      "title": "Create AI Context Update Prompt Templates",
+      "number": 70,
+      "title": "Rebuild AI Context",
       "state": "OPEN",
-      "url": "https://github.com/mae134/codex-playground/issues/47"
+      "url": "https://github.com/mae134/codex-playground/issues/70"
     },
     "pull_request": null,
     "task": "Rebuild .ai/context.md and .ai/state.json from the current repository state.",
     "status": "context_rebuilt_for_review"
   },
-  "repository": {
-    "remote": "https://github.com/mae134/codex-playground",
-    "framework": "Next.js",
-    "language": "TypeScript",
-    "package_manager": "npm",
-    "scripts": {
-      "dev": "npm run dev",
-      "build": "npm run build",
-      "lint": "npm run lint",
-      "start": "npm run start"
-    }
-  },
-  "application_status": {
-    "memo_features_completed": [
-      "display memo list",
-      "add memo",
-      "delete memo",
-      "edit memo",
-      "save memos to Local Storage"
-    ],
-    "current_storage": "Local Storage"
-  },
-  "workflow_status": {
-    "completed": [
-      "AGENTS.md rules",
-      "AI development playbook",
-      "prompt templates",
-      "development checklists",
-      "GitHub Issue Forms",
-      "Pull Request template",
-      "GitHub Actions CI",
-      ".ai project context system"
-    ],
-    "active_focus": "AI context update prompt templates"
-  },
   "open_issues": [
     {
-      "number": 47,
-      "title": "Create AI Context Update Prompt Templates"
-    },
-    {
-      "number": 37,
-      "title": "Document AI Development Environment Setup"
-    },
-    {
-      "number": 35,
-      "title": "Document GitHub Issue Branch Workflow"
-    },
-    {
-      "number": 32,
-      "title": "Update readme for Github issue Workflow"
+      "number": 70,
+      "title": "Rebuild AI Context"
     },
     {
       "number": 17,
       "title": "Retrospective"
     },
     {
-      "number": 16,
-      "title": "Improve UI"
-    },
-    {
       "number": 5,
-      "title": "Introduce GitHub Issues and Projects"
+      "title": "GitHub Issues・Projects導入"
     }
   ],
-  "local_worktree": {
-    "pre_existing_uncommitted_changes": [
-      "docs/prompts/rebuild-ai-context-prompt-template.md"
-    ],
-    "ai_context_rebuild_changes": [
-      ".ai/context.md",
-      ".ai/state.json"
-    ]
+  "repository": {
+    "remote": "https://github.com/mae134/codex-playground",
+    "head_commit": "bcce04d",
+    "worktree_before_rebuild": "clean"
   },
-  "constraints": [
-    "Do not create or switch branches unless explicitly requested.",
-    "Do not commit unless explicitly requested.",
-    "Do not push or merge.",
-    "Do not modify unrelated files.",
-    "Preserve existing user changes.",
-    "Keep .ai context concise and reference source documents instead of duplicating them."
-  ],
-  "next_recommended_task": "Review the rebuilt .ai files and the pending Issue #47 prompt-template change before committing.",
-  "important_references": [
-    "AGENTS.md",
-    "README.md",
-    ".ai/README.md",
-    "docs/playbook/ai-development-playbook.md",
-    "docs/prompts/",
-    "docs/checklists/",
-    "docs/history/",
-    ".github/ISSUE_TEMPLATE/",
-    ".github/PULL_REQUEST_TEMPLATE.md",
-    ".github/workflows/ci.yml"
-  ],
-  "last_updated": "2026-07-14"
+  "next_recommended_task": "Review the rebuilt AI context, then complete the review and Git workflow for Issue #70 and the retrospective branch.",
+  "last_updated": "2026-07-18"
 }
