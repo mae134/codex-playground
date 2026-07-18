@@ -19,13 +19,15 @@ Create Pull Request
 - Write the Pull Request draft in English.
 - Write the output as a Markdown (`.md`) file.
 - Use the GitHub Issue, implementation summary, and verification results as the source of truth.
-- Follow the approved Issue.
+- Ensure the Pull Request reflects the approved GitHub Issue.
 - Do not include any Out of Scope changes.
 - Only describe changes that were actually implemented.
 - Only include verification steps that were actually executed.
 - Do not speculate or invent functionality.
 - Keep the draft concise and easy to review.
 - Do not include implementation details that are irrelevant to reviewers.
+- Use the same Conventional Commits prefix as the Git branch and commit message whenever practical.
+- Always include a `Closes {{ISSUE_ID}}` section so the GitHub Issue is automatically closed when the Pull Request is merged.
 
 The implementation for **{{ISSUE_ID}}** has been completed.
 
@@ -35,8 +37,8 @@ Before generating the draft, review the following:
 
 - `AGENTS.md`
 - GitHub Issue
-- Implementation summary
-- Verification results
+- Implementation Summary
+- Verification Results
 
 ---
 
@@ -64,9 +66,9 @@ Generate the Pull Request using the Markdown template below.
 
 {{PR_TITLE}}
 
-## Related Issue
+## Closes
 
-{{ISSUE_ID}}
+Closes {{ISSUE_ID}}
 
 ## Summary
 
