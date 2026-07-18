@@ -117,6 +117,8 @@ Examples include:
 
 Do not bypass approval requirements imposed by the execution environment.
 
+The execution environment may still require Human approval for some otherwise permitted commands (for example, local server startup or localhost HTTP requests). Follow the environment's approval requirements when prompted.
+
 If the purpose or impact of a command is unclear, explain it and request Human approval before execution.
 
 ## Testing expectations
