@@ -23,6 +23,7 @@ The goal of this project is to establish a practical development process that ca
 | `docs/playbook/` | Development workflow and operational guidelines |
 | `docs/checklists/` | Checklists for development phases and resuming work |
 | `docs/adr/` | Architecture Decision Records |
+| `docs/design/` | Approved Design documents |
 | `docs/prompts/` | Prompt templates for AI assistants |
 | `docs/history/` | Workflow improvement history |
 
@@ -44,7 +45,7 @@ The goal of this project is to establish a practical development process that ca
 | `app/` | Memo application implementation |
 | `.ai/` | Shared AI project context |
 | `.github/` | GitHub Issue templates and workflows |
-| `docs/` | Playbook, checklists, prompts, history, and ADRs |
+| `docs/` | Playbook, checklists, approved designs, prompts, history, and ADRs |
 
 ---
 

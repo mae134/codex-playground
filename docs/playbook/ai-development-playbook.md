@@ -227,6 +227,9 @@ GitHub Issueは「何を実装するか（What）」を定義する。
 - `codex-implementation-prompt-template.md`
   - Codexへ実装を依頼するためのテンプレート
 
+- `approved-design-prompt-template.md`
+  - Approved Designを作成するためのテンプレート
+
 - `pull-request-draft-prompt-template.md`
   - Pull Request本文のドラフトを生成するためのテンプレート
 
